@@ -286,7 +286,31 @@ function anim() {
     all.sort(function(a, b) { return b.screen.z - a.screen.z });
     all.map(function(item) { item.draw(); });
 }
-
+function drawLine(icon) {
+    const map = document.getElementById('map');
+    const center = document.getElementById('center');
+  
+    const iconRect = icon.getBoundingClientRect();
+    const centerRect = center.getBoundingClientRect();
+    const mapRect = map.getBoundingClientRect();
+  
+    const x1 = centerRect.left + centerRect.width / 2 - mapRect.left;
+    const y1 = centerRect.top + centerRect.height / 2 - mapRect.top;
+    const x2 = iconRect.left + iconRect.width / 2 - mapRect.left;
+    const y2 = iconRect.top + iconRect.height / 2 - mapRect.top;
+  
+    const length = Math.hypot(x2 - x1, y2 - y1);
+    const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+  
+    const line = document.createElement('div');
+    line.className = 'line';
+    line.style.height = length + 'px';
+    line.style.transform = `translate(${x1}px, ${y1}px) rotate(${angle}deg)`;
+    line.style.transformOrigin = 'top left';
+  
+    map.appendChild(line);
+  }
+  
 window.addEventListener('resize', function() {
     opts.vanishPoint.x = (w = c.width = document.querySelector('.animation-container').offsetWidth) / 2;
     opts.vanishPoint.y = (h = c.height = document.querySelector('.neural-header').offsetHeight) / 2;
