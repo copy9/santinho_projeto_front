@@ -6,6 +6,94 @@
     <title>Santinho Eletronico</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .center-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: #1e40af;
+            border: 4px solid #60a5fa;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #60a5fa;
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .center-node:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .node {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #1e40af;
+            border: 2px solid #93c5fd;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .node:hover {
+            transform: scale(1.1);
+        }
+
+        .node-1 { top: 20px; left: 100px; }
+        .node-2 { top: 20px; right: 100px; }
+        .node-3 { left: 20px; top: 150px; }
+        .node-4 { right: 20px; top: 150px; }
+        .node-5 { left: 100px; bottom: 20px; }
+        .node-6 { right: 100px; bottom: 20px; }
+
+        .background-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: 0;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .line {
+            fill: none;
+            stroke: #60a5fa;
+            stroke-width: 2;
+        }
+    </style>
 </head>
 <body>
     <header class="neural-header">
@@ -22,6 +110,7 @@
                 <button class="campaign-button">SEJA UM CABO ELEITORAL</button>
             </div>
         </section>
+    </header>
     <main class="main-content">
         <h2>Conecte-se ao Futuro</h2>
         <p>Explore nossa plataforma digital inovadora e transforme sua experiência online.</p>
@@ -34,6 +123,51 @@
             <p>Junte-se a nós nesta jornada e faça parte de uma comunidade que valoriza o futuro da tecnologia.</p>
         </div>
     </section>
+
+    <div class="container">
+        <div class="background-grid"></div>
+        <svg>
+            <!-- Line 1: Center to Node 1 (Top Left - Settings) -->
+            <path class="line" d="M300,200 Q250,150 130,60" />
+            <!-- Line 2: Center to Node 2 (Top Right - Cloud) -->
+            <path class="line" d="M300,200 Q350,150 470,60" />
+            <!-- Line 3: Center to Node 3 (Left Middle - AI) -->
+            <path class="line" d="M300,200 Q200,200 50,180" />
+            <!-- Line 4: Center to Node 4 (Right Middle - House) -->
+            <path class="line" d="M300,200 Q400,200 550,180" />
+            <!-- Line 5: Center to Node 5 (Bottom Left - Graph) -->
+            <path class="line" d="M300,200 Q250,250 130,340" />
+            <!-- Line 6: Center to Node 6 (Bottom Right - Cart) -->
+            <path class="line" d="M300,200 Q350,250 470,340" />
+        </svg>
+        <div class="center-node" onclick="alert('Central Node Clicked!')">S</div>
+
+<div class="node node-1" onclick="alert('pin Clicked!')">
+  <img src="gravata.svg" alt="Pin" />
+</div>
+
+<div class="node node-2" onclick="alert('Cloud Clicked!')">
+  <img src="cooperation_greeting_partnership_deal_agreement_handshake_icon_262591.svg" alt="Cloud" />
+</div>
+
+<div class="node node-3" onclick="alert('AI Clicked!')">
+  <img src="pin.svg" alt="AI" />
+</div>
+
+<div class="node node-4" onclick="alert('House Clicked!')">
+  <img src="ia.svg" alt="House" />
+</div>
+
+<div class="node node-5" onclick="alert('Graph Clicked!')">
+  <img src="vote_outline_icon_139084.svg" alt="Graph" />
+</div>
+
+<div class="node node-6" onclick="alert('Cart Clicked!')">
+  <img src="user_icon-icons.com_57997.svg" alt="Cart" />
+</div>
+
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
