@@ -18,7 +18,7 @@ body {
 .animation-container {
     width: 50%;
     height: 100%;
-    position: relative;
+    position: center;
     overflow: hidden; /* Evita overflow do canvas */
 }
 
@@ -945,7 +945,7 @@ svg {
   color: #fff;
   text-align: center;
   padding: 20px 0;
-  position: relative;
+  position: center;
   bottom: 0;
   width: 100%;
 }
