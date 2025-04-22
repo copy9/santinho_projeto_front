@@ -151,6 +151,7 @@ body {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   z-index: 3;
+   overflow-x: hidden;
 }
 
 .campaign-container {
@@ -823,6 +824,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
   z-index: 2;
+   overflow-x: hidden;
 }
 
 .center-node:hover {
@@ -846,6 +848,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
   z-index: 2;
+   overflow-x: hidden;
 }
 
 .node img {
