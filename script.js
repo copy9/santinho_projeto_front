@@ -1,5 +1,5 @@
 var c = document.getElementById('neuralCanvas'),
-    w = c.width = window.innerWidth,
+    w = c.width = document.querySelector('.animation-container').offsetWidth,
     h = c.height = document.querySelector('.neural-header').offsetHeight,
     ctx = c.getContext('2d'),
     opts = {
@@ -288,7 +288,7 @@ function anim() {
 }
 
 window.addEventListener('resize', function() {
-    opts.vanishPoint.x = (w = c.width = window.innerWidth) / 2;
+    opts.vanishPoint.x = (w = c.width = document.querySelector('.animation-container').offsetWidth) / 2;
     opts.vanishPoint.y = (h = c.height = document.querySelector('.neural-header').offsetHeight) / 2;
     ctx.fillRect(0, 0, w, h);
 });
