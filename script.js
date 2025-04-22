@@ -1,6 +1,6 @@
 var c = document.getElementById('neuralCanvas'),
     w = c.width = window.innerWidth,
-    h = c.height = window.innerHeight,
+    h = c.height = document.querySelector('.neural-header').offsetHeight,
     ctx = c.getContext('2d'),
     opts = {
         range: 180,
@@ -52,7 +52,7 @@ var c = document.getElementById('neuralCanvas'),
 ctx.fillStyle = '#222';
 ctx.fillRect(0, 0, w, h);
 ctx.fillStyle = '#ccc';
-ctx.font = '50px Verdana';
+ctx.font = '30px Verdana';
 ctx.fillText('Calculating Nodes', w / 2 - ctx.measureText('Calculating Nodes').width / 2, h / 2 - 15);
 
 window.setTimeout(init, 4);
@@ -289,7 +289,7 @@ function anim() {
 
 window.addEventListener('resize', function() {
     opts.vanishPoint.x = (w = c.width = window.innerWidth) / 2;
-    opts.vanishPoint.y = (h = c.height = window.innerHeight) / 2;
+    opts.vanishPoint.y = (h = c.height = document.querySelector('.neural-header').offsetHeight) / 2;
     ctx.fillRect(0, 0, w, h);
 });
 
