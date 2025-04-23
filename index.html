@@ -8,70 +8,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
 </head>
+<header>
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  
 <body>
+    <section>
+        <div class="Texto-inicial"><h2>Santinho Eletronico</h2></div>
+    </section>
     <header class="neural-header">
         <div class="animation-container">
             <canvas id="neuralCanvas"></canvas>
         </div>
-        <div class="header-image">
-            <img src="img png.png" alt="Casal ao pôr do sol">
-        </div>
-        <section class="campaign-section">
-            <div class="campaign-container">
-                <h2>SANTINHO ELETRÔNICO</h2>
-                <p>Gerencie sua campanha política com tecnologia, praticidade e alcance.</p>
-                <button class="campaign-button">SEJA UM CABO ELEITORAL</button>
-            </div>
-        </section>
-    </header>
-    <main class="main-content">
-        <h2>Santinho Eletronico</h2>
-        <p>A mudança que você deseja começa com sua ação. Seja cabo eleitoral!.</p>
-        <button class="cta-button">SEJA UM CABO ELEITORAL</button>
-    </main>
-    <section class="about-section">
-        <div class="about-text">
-            <h2>Sobre Nós</h2>
-            <p>Ser cabo eleitoral oferece diversos benefícios para quem deseja se envolver ativamente no processo democrático e ampliar sua rede de contatos. Além de contribuir para a promoção de um candidato ou partido, essa função pode trazer vantagens pessoais e profissionais. ￼
-
-1. Participação ativa na democracia
-Atuar como cabo eleitoral permite que o indivíduo participe diretamente do processo eleitoral, promovendo o engajamento cívico e a conscientização política entre os eleitores.
-
-2. Desenvolvimento de habilidades interpessoais
-Durante a campanha, o cabo eleitoral aprimora competências como comunicação, persuasão e organização, habilidades valiosas em diversas áreas profissionais. ￼
-
-3. Ampliação da rede de contatos
-O trabalho em campanhas eleitorais proporciona a oportunidade de conhecer pessoas de diferentes setores, incluindo políticos, líderes comunitários e outros voluntários, o que pode ser útil para futuras oportunidades profissionais.
-
-4. Possibilidade de remuneração
-Em algumas campanhas, os cabos eleitorais podem ser remunerados pelo seu trabalho, o que representa uma fonte de renda temporária.  ￼
-
-5. Contribuição para causas importantes
-Ao apoiar um candidato ou partido alinhado com suas convicções, o cabo eleitoral contribui para a promoção de políticas públicas e iniciativas que considera importantes para a sociedade. ￼
-
-É importante ressaltar que, embora não haja proibição legal para beneficiários de programas sociais atuarem como cabos eleitorais, essa atividade pode impactar o recebimento de certos benefícios, dependendo da forma de contratação e da legislação vigente.  
-
-Em resumo, ser cabo eleitoral é uma experiência enriquecedora que oferece benefícios tanto para o indivíduo quanto para a sociedade, promovendo o fortalecimento da democracia e o desenvolvimento pessoal.</p>
-        </div>
-    </section>
+    </header>  
 
     <div class="container">
         <div class="background-grid"></div>
         <svg>
-            <!-- Line 1: Center to Node 1 (Top Left - Settings) 
-            <path class="line" d="M300,200 Q250,150 130,60" />
-             Line 2: Center to Node 2 (Top Right - Cloud) 
-            <path class="line" d="M300,200 Q350,150 470,60" />
-             Line 3: Center to Node 3 (Left Middle - AI) 
-            <path class="line" d="M300,200 Q200,200 50,180" />
-             Line 4: Center to Node 4 (Right Middle - House) 
-            <path class="line" d="M300,200 Q400,200 550,180" />
-             Line 5: Center to Node 5 (Bottom Left - Graph) 
-            <path class="line" d="M300,200 Q250,250 130,340" />
-             Line 6: Center to Node 6 (Bottom Right - Cart) 
-            <path class="line" d="M300,200 Q350,250 470,340" /> -->
+            <!-- Linha 1: Centro para o Nó 1 (Topo Esquerdo - Configurações) -->
+<path class="line" d="M300,200 Q250,150 130,60" />
+
+<!-- Linha 2: Centro para o Nó 2 (Topo Direito - Nuvem) -->
+<path class="line" d="M300,200 Q350,150 470,60" />
+
+<!-- Linha 3: Centro para o Nó 3 (Meio Esquerdo - IA) -->
+<path class="line" d="M300,200 Q200,200 50,180" />
+
+<!-- Linha 4: Centro para o Nó 4 (Meio Direito - Casa) -->
+<path class="line" d="M300,200 Q400,200 550,180" />
+
+<!-- Linha 5: Centro para o Nó 5 (Inferior Esquerdo - Gráfico) -->
+<path class="line" d="M300,200 Q250,250 130,340" />
+
+<!-- Linha 6: Centro para o Nó 6 (Inferior Direito - Carrinho) -->
+<path class="line" d="M300,200 Q350,250 470,340" />
+
         </svg>
         <div class="center-node" onclick="alert('Central Node Clicked!')">S</div>
+      
+          
 
 <div class="node node-1" onclick="alert('pin Clicked!')">
   <img src="gravata.svg" alt="Pin" />
@@ -98,6 +83,23 @@ Em resumo, ser cabo eleitoral é uma experiência enriquecedora que oferece bene
 </div>
 
     </div>
+
+    <main class="main-content">
+        
+            <div class="header-image">
+                <img src="img png.png" alt="Casal ao pôr do sol">
+            </div>
+            
+        <section>
+            <div class="campaign-container">
+                <p>A mudança que você deseja começa com sua ação. Seja cabo eleitoral!</p>
+                <button class="campaign-button">SEJA UM CABO ELEITORAL</button>
+            </div>
+        </section>
+    </main>
+    
+
+    
 
     <footer class="footer">
   <p>&copy; 2025 Orgulhosamente criado por <strong>Copy9 Digital®</strong></p>
