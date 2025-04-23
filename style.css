@@ -979,10 +979,11 @@ body {
 
 svg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-18%, -20%); /* Ajusta o ponto central */
+  width: 80%; /* Diminui a largura para 80% */
+  height: 80%; /* Ajusta a altura para 80% para caber dentro do container */
   z-index: 1;
 }
 
@@ -991,14 +992,13 @@ svg {
   stroke: #1aa32d;
   stroke-width: 4;
   stroke-linecap: round;
-
   /* Efeito de traço animado */
   stroke-dasharray: 10, 10;
   stroke-dashoffset: 0;
-  animation: lightning 1s infinite linear;
-
+  animation: lightning 2s infinite linear;
   /* Efeito de brilho */
   filter: drop-shadow(0 0 6px #1aa32d);
+  transform-origin: center; /* Garante que a animação se origine do centro */
 }
 
 @keyframes lightning {
