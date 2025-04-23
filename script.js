@@ -1,6 +1,9 @@
+// script.js
 var c = document.getElementById('neuralCanvas'),
-    w = c.width = document.querySelector('.animation-container').offsetWidth,
-    h = c.height = document.querySelector('.neural-header').offsetHeight,
+    animationContainer = document.querySelector('.animation-container'),
+    headerContainer = document.querySelector('.neural-header'),
+    w = c.width = animationContainer.offsetWidth,
+    h = c.height = headerContainer.offsetHeight,
     ctx = c.getContext('2d'),
     opts = {
         range: 180,
@@ -286,35 +289,30 @@ function anim() {
     all.sort(function(a, b) { return b.screen.z - a.screen.z });
     all.map(function(item) { item.draw(); });
 }
-function drawLine(icon) {
-    const map = document.getElementById('map');
-    const center = document.getElementById('center');
-  
-    const iconRect = icon.getBoundingClientRect();
-    const centerRect = center.getBoundingClientRect();
-    const mapRect = map.getBoundingClientRect();
-  
-    const x1 = centerRect.left + centerRect.width / 2 - mapRect.left;
-    const y1 = centerRect.top + centerRect.height / 2 - mapRect.top;
-    const x2 = iconRect.left + iconRect.width / 2 - mapRect.left;
-    const y2 = iconRect.top + iconRect.height / 2 - mapRect.top;
-  
-    const length = Math.hypot(x2 - x1, y2 - y1);
-    const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
-  
-    const line = document.createElement('div');
-    line.className = 'line';
-    line.style.height = length + 'px';
-    line.style.transform = `translate(${x1}px, ${y1}px) rotate(${angle}deg)`;
-    line.style.transformOrigin = 'top left';
-  
-    map.appendChild(line);
-  }
-  
-window.addEventListener('resize', function() {
-    opts.vanishPoint.x = (w = c.width = document.querySelector('.animation-container').offsetWidth) / 2;
-    opts.vanishPoint.y = (h = c.height = document.querySelector('.neural-header').offsetHeight) / 2;
-    ctx.fillRect(0, 0, w, h);
-});
 
+// Remove a função drawLine, pois não é usada no HTML
+// function drawLine(icon) { ... }
+
+function resizeCanvas() {
+    w = c.width = animationContainer.offsetWidth;
+    h = c.height = headerContainer.offsetHeight;
+    opts.vanishPoint.x = w / 2;
+    opts.vanishPoint.y = h / 2;
+    ctx.fillStyle = '#222';
+    ctx.fillRect(0, 0, w, h);
+}
+
+window.addEventListener('resize', resizeCanvas);
 window.addEventListener('click', init);
+
+// Chama resizeCanvas inicialmente para garantir o tamanho correto
+resizeCanvas();
+
+function toggleMenu() {
+    var menu = document.getElementById("nav-menu");
+    if (menu.style.display === "flex") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "flex";
+    }
+  }
